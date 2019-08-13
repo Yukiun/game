@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <style media="screen">
     *{
         padding: 0;
@@ -53,7 +54,21 @@
         </div>
     </div>
 </body>
-
-<script src="main.js" charset="utf-8"></script>
+<script>
+    let log = console.log.bind(console)
+    let [width, height] = [window.innerWidth, window.innerHeight]
+    log(width / height,width, height, 375 / 667)
+    let condition = width / height < 375 / 667
+    log(condition)
+    if (condition) {
+        document.body.innerHTML = "<H1>请竖屏浏览页面</H1>"
+        log('qwe')
+    } else {
+        let script = document.createElement('script')
+        script.src = 'main.js'
+        document.querySelector('body').appendChild(script)
+    }
+</script>
+<!--<script src="main.js" charset="utf-8"></script>-->
 
 </html>
